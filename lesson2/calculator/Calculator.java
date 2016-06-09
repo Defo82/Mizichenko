@@ -1,4 +1,5 @@
 package lesson2.calculator;
+
 public class Calculator {
     public double result;
 
