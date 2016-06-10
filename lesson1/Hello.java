@@ -7,3 +7,4 @@ public class Hello {
 }
 
 // TAG_ALTERNATE_IIOP_ADDRESS
+// comment
