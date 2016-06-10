@@ -1,6 +1,6 @@
 package lesson4.factorial;
 
-public class Method {
+public class FactorialFinder {
 	
 	public int factorialOf (int x) {
 		int c, fact = 1;

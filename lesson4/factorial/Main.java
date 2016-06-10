@@ -2,8 +2,8 @@
 
 public class Main {
     public static void main(String args[]) {
-		Method met = new Method();
+		FactorialFinder search = new FactorialFinder();
 		
-        System.out.println("факториал 10 равен: " + met.factorialOf(10));
+        System.out.println("факториал 10 равен: " + search.factorialOf(10));
     }
 }

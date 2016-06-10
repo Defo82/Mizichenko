@@ -1,5 +1,4 @@
-package lesson3.triangle3.0;
-
+package lesson3.triangle;
 public class Main {
     public static void main(String[] args) {
         //Объекты
@@ -8,9 +7,8 @@ public class Main {
         Point c = new Point(1,4);
         Triangle triangle = new Triangle(a,b,c);
         Max m = new Max();
-        CheckSide check = new CheckSide(a,b,c);
 
-        if (check.var == false) System.out.println("Треугольник построить нельзя!");
+        if (triangle.isExists() == false) System.out.println("Треугольник построить нельзя!");
         else {
 
             System.out.println("Большая сторона: " + m.max(m.max(a.distanceTo(b), b.distanceTo(c)), c.distanceTo(a)));
