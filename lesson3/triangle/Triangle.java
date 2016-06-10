@@ -32,7 +32,6 @@ public class Triangle {
         //calculate the triangle area
 
         double p = (this.a.distanceTo(b)+this.b.distanceTo(c)+this.c.distanceTo(a))/2;
-        double area = Math.sqrt( p*(p-this.a.distanceTo(b))*(p-this.b.distanceTo(c))*(p-this.c.distanceTo(a)) );
-        return area;
+        return Math.sqrt( p*(p-this.a.distanceTo(b))*(p-this.b.distanceTo(c))*(p-this.c.distanceTo(a)) );
     }
 }
