@@ -5,3 +5,5 @@ public class Hello {
 		System.out.println("Hello world. ");
 	}
 }
+
+// TAG_ALTERNATE_IIOP_ADDRESS
