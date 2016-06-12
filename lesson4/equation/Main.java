@@ -17,7 +17,7 @@ public class Main {
 
         //Цикл считает значения y в диапазоне от x1 до x2 с интервалом step
         for (int x = square.x1; x < square.x2; x += square.step) {
-            //Каждая итерация выводит значение y от x
+            //Каждая итерация выводит новое значение y от x
             System.out.println(square.calculate(x));
         }
 
