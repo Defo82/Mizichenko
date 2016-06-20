@@ -7,7 +7,7 @@ public class Main {
         for (int a : values) {
 
             //Второй цикл берёт крайний "пузырек" и поднимает его на верх
-                            //values.length возвращает 11, но пар чисел 10 и итераций должно быть 10
+                            //values.length возвращает 11, но итераций должно быть 10
                             //поэтому values.length - 1
             for (int i = 0; i < values.length - 1; i++) {
                 int first = values[i];
