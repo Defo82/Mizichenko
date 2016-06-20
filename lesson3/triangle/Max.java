@@ -1,4 +1,4 @@
-package lesson3.triangle;
+package triangle;
 public class Max {
 
     public double max(double a, double b) {

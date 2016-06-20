@@ -1,4 +1,4 @@
-package lesson3.triangle;
+package triangle;
 public class Main {
     public static void main(String[] args) {
         //Объекты

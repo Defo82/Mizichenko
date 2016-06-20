@@ -1,4 +1,5 @@
-package lesson3.triangle;public class Triangle {
+package triangle;
+public class Triangle {
     public Point a, b,c;
 
     public Triangle(Point a, Point b, Point c) {
@@ -22,7 +23,7 @@ package lesson3.triangle;public class Triangle {
             (this.a.x == this.c.x && this.a.y == this.c.y) ||
             (this.c.x == this.b.x && this.c.y == this.b.y)
                 )return false;
-        else return true;
+				else return true;
     }
 
 

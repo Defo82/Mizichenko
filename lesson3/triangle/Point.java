@@ -1,4 +1,4 @@
-package lesson3.triangle;
+package triangle;
 public class Point {
     public double x, y;
 
