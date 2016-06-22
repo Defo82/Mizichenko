@@ -1,4 +1,4 @@
-
+package lesson5.rotate;
 public class Rot {
     public static void main(String[] args) {
         int c = 0;//используем переменную класса для инициализации массива
