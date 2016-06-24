@@ -1,9 +1,9 @@
-
+package lesson5.rotate;
 public class Rot {
     public static void main(String[] args) {
         int c = 0;//используем переменную класса для инициализации массива
         int d = 8;//зададим размер стороны матрицы
-        int[][] arr = new int[d][d];//массив 3 на 3
+        int[][] arr = new int[d][d];//массив 8 на 8
 //заполняем массив
         for (int i = 0; i < d; i++){
             for (int j =0; j < d; j++){
