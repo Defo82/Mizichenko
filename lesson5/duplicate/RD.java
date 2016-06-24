@@ -1,4 +1,4 @@
-
+packege lesson5.duplicate;
 public class RD {
 
     public void removeDuplicate(String[] values) {
