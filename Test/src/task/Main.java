@@ -1,4 +1,4 @@
-package test;
+package task;
 public class Main {
     public static void main(String[] args) {
 
@@ -6,7 +6,6 @@ public class Main {
         String sub =             "distinguit";
 
         SubWord one = new SubWord();
-
 
         System.out.println(one.contains(origin, sub));
 

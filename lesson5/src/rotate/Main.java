@@ -1,9 +1,9 @@
-package lesson5.rotate;
+package rotate;
 public class Main {
     public static void main(String[] args) {
 
         int[][] arr = new int[8][8];
-        Rotate rotate = new Rotate(0, 8);
+        Rotate rotate = new Rotate();
 
         rotate.fillArray(arr);
 

@@ -1,4 +1,4 @@
-packege lesson5.duplicate;
+package duplicate;
 public class Main {
     public static void main(String[] args) {
 

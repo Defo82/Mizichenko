@@ -1,9 +1,9 @@
-packege lesson5.duplicate;
+package duplicate;
 public class RD {
 
     public void removeDuplicate(String[] values) {
 
-        /*
+        /**
         метод должен найти дубликат
         и сдвинуть все последующие элементы влево затерев тем самым его,
         последний элемент занулить
@@ -15,7 +15,7 @@ public class RD {
                     for (int k = j; k < values.length - 1; k++){
                         values[k] = values[k+1];
                     }
-                    values[values.length - 1] = "0";// немогу занулить NullPointerException
+                    values[values.length - 1] = "0";
                 }
             }
 
