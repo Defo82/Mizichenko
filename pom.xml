@@ -5,11 +5,6 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<maven.complier.source>1.7</maven.complier.source>
-		<maven.complier.target>1.7</maven.complier.target>
-	</properties>
-
 	<modules>
 		<module>lesson1</module>
 		<module>lesson2</module>
