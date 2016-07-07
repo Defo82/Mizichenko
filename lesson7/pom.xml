@@ -1,15 +1,10 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.amizichenko</groupId>
-	<artifactId>lesson1</artifactId>
+	<artifactId>tracker</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-
-	<parent>
-		<groupId>mizichenko</groupId>
-		<artifactId>lessons</artifactId>
-		<version>1.0</version>
-	</parent>
+	
 
 	<dependencies>
 		<dependency>
