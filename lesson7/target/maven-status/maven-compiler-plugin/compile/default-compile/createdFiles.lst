@@ -1,5 +1,5 @@
-ru\amizichenko\tracker\modules\Task.class
-ru\amizichenko\tracker\modules\Input.class
-ru\amizichenko\tracker\working\UserWork.class
-ru\amizichenko\tracker\modules\Item.class
-ru\amizichenko\tracker\working\Tracker.class
+ru\amizichenko\tracker\start\StartUI.class
+ru\amizichenko\tracker\models\Item.class
+ru\amizichenko\tracker\start\Tracker.class
+ru\amizichenko\tracker\models\Bug.class
+ru\amizichenko\tracker\models\Task.class

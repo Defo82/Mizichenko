@@ -1,7 +1,7 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>mizichenko</groupId>
-	<artifactId>lessons</artifactId>
+	<groupId>ru.amizichenko</groupId>
+	<artifactId>mizichenko</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
@@ -12,6 +12,7 @@
 		<module>lesson4</module>
 		<module>lesson5</module>
 		<module>lesson6</module>
+		<module>lesson7</module>
 		<module>test1</module>
 	</modules>
 

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>mizichenko</artifactId>
+    <groupId>ru.amizichenko</groupId>
+    <version>1.0</version>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.amizichenko</groupId>
-  <artifactId>tracker</artifactId>
-  <version>1.0</version>
+  <artifactId>lesson7</artifactId>
   <build>
     <plugins>
       <plugin>
@@ -18,7 +22,9 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>org.sonatype.haven.HavenCli</mainClass>
+                  <manifestEntries>
+                    <Main-Class>ru.amizichenko.tracker.start.StartUI</Main-Class>
+                  </manifestEntries>
                 </transformer>
               </transformers>
             </configuration>

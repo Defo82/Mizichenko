@@ -6,8 +6,8 @@
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>mizichenko</groupId>
-		<artifactId>lessons</artifactId>
+		<groupId>ru.amizichenko</groupId>
+		<artifactId>mizichenko</artifactId>
 		<version>1.0</version>
 	</parent>
 
