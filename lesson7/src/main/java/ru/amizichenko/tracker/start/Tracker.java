@@ -5,30 +5,54 @@ import java.util.*;
 public class Tracker {	
 		public Item[] items = new Item[10];
 		private int position = 0;
-		private static final Random RN = new Random();
 		
+		//Добовление
 		public Item add(Item item) {
 			item.setId(this.generateId());
 			this.items[position++] = item;
 			return item;
 		}
 		
-		protected Item findById(String id) {
+		//Редактирование
+		public void edit(String id,String name, String desc) {
+
+			for(int i = 0; i < this.items.length; i++){
+				if (this.items[i] == this.findById(id)) {
+					this.items[i] = new Item(name,desc);
+					break;
+				}
+			}
+		}
+		
+		//Удаление
+		public void remove(int index) {
+			
+			if (index >= 0 && index < this.items.length) {
+				Item[] copy = new Item[this.items.length-1];
+				System.arraycopy(this.items, 0, copy, 0, index);
+				System.arraycopy(this.items, index+1, copy, index, this.items.length-index-1);
+				this.items = copy;
+				this.position--;
+			}
+		}
+		
+		//Поиск по Id
+		public Item findById(String id) {
 			Item result = null;
 			for(Item item : items) {
 				if(item != null && item.getId().equals(id)) {
 					result = item;
 					break;
 				}
-				
 			}
 			return result;
 		}
 		
 		String generateId() {
-			return String.valueOf(System.currentTimeMillis() + RN.nextInt(100));			
+			return String.valueOf(Math.round(Math.random() * 100));
 		}
 		
+		//Вернуть все
 		public Item[] getAll() {
 			Item[] result = new Item[position];
 			for(int index = 0; index != this.position; index++) {
@@ -36,5 +60,33 @@ public class Tracker {
 			}
 			return result;
 		}
+		
+		//Показть все
+		public void show() {
+			System.out.println("================================================================================");
+
+			int cell = 1;
+			for (Item item : this.items) {
+				if (item != null) {
+					System.out.printf("%d \tName: %s \n\tDescription: %s\n",
+								cell++, item.getName(),item.getDescription());
+					System.out.println();
+				}
+			}
+		System.out.println("================================================================================");
+		}
+
+		//Ищет все объекты с заданным словом
+		public Item[] sort(String word) {
+			Item[] sorted = new Item[this.items.length];
+			int filterIndex = 0;
+			for (int i = 0; i < this.items.length; i++) {
+				if (this.items[i] != null && (this.items[i].getName().contains(word) || this.items[i].getName().contains(word))) {
+					sorted[filterIndex++] = this.items[i];
+				}
+			}
+			return sorted;
+		}
+
 		
 }

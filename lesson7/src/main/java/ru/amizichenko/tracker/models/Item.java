@@ -2,6 +2,7 @@ package ru.amizichenko.tracker.models;
 
 
 public class Item {
+
 	private String id;
 	public String name;
 	public String description;
@@ -12,10 +13,9 @@ public class Item {
 		
 	}
 	
-	public Item(String name, String description, long create) {
+	public Item(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.create = create;
 	}
 	
 	public String getName() {
