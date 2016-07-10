@@ -12,18 +12,17 @@ public class Tracker {
 			this.items[position++] = item;
 			return item;
 		}
-		
-		//Редактирование
-		public void edit(String id,String name, String desc) {
 
-			for(int i = 0; i < this.items.length; i++){
-				if (this.items[i] == this.findById(id)) {
-					this.items[i] = new Item(name,desc);
+		//Редактирование
+		public void edit(Item item) {
+			for (int i =0; i < this.items.length; i++) {
+				if (this.items[i].getId().equals(item.getId())) {
+					this.items[i] = item;
 					break;
-				}
+				} else System.out.println("Such Id is not found");
 			}
 		}
-		
+
 		//Удаление
 		public void remove(int index) {
 			
@@ -68,8 +67,8 @@ public class Tracker {
 			int cell = 1;
 			for (Item item : this.items) {
 				if (item != null) {
-					System.out.printf("%d \tName: %s \n\tDescription: %s\n",
-								cell++, item.getName(),item.getDescription());
+					System.out.printf("%s \tName: %s \n\tDescription: %s\n",
+							item.getId(),item.getName(),item.getDescription());
 					System.out.println();
 				}
 			}
