@@ -24,7 +24,14 @@ public class Tracker {
 		}
 
 		//Удаление
-		public void remove(int index) {
+		public void remove(String id) {
+			int index = 0;
+			for (int i = 0; i < this.items.length; i++) {
+				if(this.items[i].getId().equals(id)) {
+					index = i;
+					break;
+				} else System.out.println("Such Id is not found");
+			}
 			
 			if (index >= 0 && index < this.items.length) {
 				Item[] copy = new Item[this.items.length-1];
@@ -61,11 +68,11 @@ public class Tracker {
 		}
 		
 		//Показть все
-		public void show() {
+		public void show(Item[] arr) {
 			System.out.println("================================================================================");
 
 			int cell = 1;
-			for (Item item : this.items) {
+			for (Item item : arr) {
 				if (item != null) {
 					System.out.printf("%s \tName: %s \n\tDescription: %s\n",
 							item.getId(),item.getName(),item.getDescription());
@@ -80,7 +87,7 @@ public class Tracker {
 			Item[] sorted = new Item[this.items.length];
 			int filterIndex = 0;
 			for (int i = 0; i < this.items.length; i++) {
-				if (this.items[i] != null && (this.items[i].getName().contains(word) || this.items[i].getName().contains(word))) {
+				if (this.items[i] != null && (this.items[i].getName().equals(word) | this.items[i].getDescription().equals(word))) {
 					sorted[filterIndex++] = this.items[i];
 				}
 			}

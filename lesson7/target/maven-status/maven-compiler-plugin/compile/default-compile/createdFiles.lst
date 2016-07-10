@@ -1,5 +1,5 @@
+ru\amizichenko\start\Input.class
 ru\amizichenko\tracker\start\StartUI.class
 ru\amizichenko\tracker\models\Item.class
 ru\amizichenko\tracker\start\Tracker.class
-ru\amizichenko\tracker\models\Bug.class
-ru\amizichenko\tracker\models\Task.class
+ru\amizichenko\start\ConsoleInput.class
