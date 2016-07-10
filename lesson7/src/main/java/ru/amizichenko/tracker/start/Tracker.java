@@ -1,8 +1,7 @@
 package ru.amizichenko.tracker.start;
 import ru.amizichenko.tracker.models.*;
-import java.util.*;
 
-public class Tracker {	
+public class Tracker {
 		public Item[] items = new Item[10];
 		private int position = 0;
 		
@@ -94,5 +93,4 @@ public class Tracker {
 			return sorted;
 		}
 
-		
 }

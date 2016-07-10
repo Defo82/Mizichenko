@@ -23,11 +23,14 @@ public class StartUI {
         while (key != 6) {
             key = Integer.parseInt(input.ask("Enter your choice: "));
                 if (key == 1) {
-                    tracker.add(new Item(input.ask("Fill in 'name': "),input.ask("Fill in 'description': ")));
+                    tracker.add(new Item(   input.ask("Fill in 'name': "),
+                                            input.ask("Fill in 'description': ")));
                     System.out.println(menu);
                 }
                 if (key == 2) {
-                    tracker.edit(new Item(input.ask("Enter Id for edit: "),input.ask("Enter new name: "),input.ask("Enter new description: ")));
+                    tracker.edit(new Item(  input.ask("Enter Id for edit: "),
+                                            input.ask("Enter new name: "),
+                                            input.ask("Enter new description: ")));
                     System.out.println(menu);
                 }
                 if (key == 3) {
