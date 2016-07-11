@@ -29,7 +29,7 @@ public class Tracker {
 				if(this.items[i].getId().equals(id)) {
 					index = i;
 					break;
-				} else System.out.println("Such Id is not found");
+				}else System.out.println("Such id is not found.");
 			}
 			
 			if (index >= 0 && index < this.items.length) {
