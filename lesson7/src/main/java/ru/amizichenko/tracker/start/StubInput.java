@@ -5,10 +5,12 @@ public class StubInput implements Input {
 	private int position = 0;
 	
 	public StubInput(String[] answers) {
-		this.answers = answers;		
+			this.answers = answers;
 	}
 	
 	public String ask(String question) {
+		System.out.print(question);
+		System.out.println(answers[position]);
 		return answers[position++];
 	}
 }
