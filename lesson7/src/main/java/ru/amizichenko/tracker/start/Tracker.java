@@ -70,7 +70,6 @@ public class Tracker {
 		public void show(Item[] arr) {
 			System.out.println("================================================================================");
 
-			int cell = 1;
 			for (Item item : arr) {
 				if (item != null) {
 					System.out.printf("%s \tName: %s \n\tDescription: %s\n",
