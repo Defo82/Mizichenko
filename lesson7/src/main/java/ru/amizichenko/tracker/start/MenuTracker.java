@@ -76,7 +76,7 @@ public class MenuTracker {
 			return 4;
 		}
 		public void execute(Input input, Tracker tracker) {
-			tracker.show(tracker.items);
+			//tracker.show(tracker.items);
 		}
 		public String info() {
 			return String.format("\t%s. %s", this.key(), "Show all items");

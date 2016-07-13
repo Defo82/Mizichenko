@@ -2,7 +2,7 @@ package ru.amizichenko.tracker.start;
 import ru.amizichenko.tracker.models.*;
 
 public class Tracker {
-		public Item[] items = new Item[10];
+		private Item[] items = new Item[10];
 		private int position = 0;
 		
 		//Добовление
