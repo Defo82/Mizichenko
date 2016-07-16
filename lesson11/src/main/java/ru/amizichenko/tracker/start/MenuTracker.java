@@ -1,5 +1,6 @@
 package ru.amizichenko.tracker.start;
 import ru.amizichenko.tracker.models.*;
+import ru.amizichenko.tracker.templates.BaseAction;
 
 public class MenuTracker {
 	
@@ -28,6 +29,7 @@ public class MenuTracker {
 		this.actions[4] = this.new Sort();
 		this.actions[5] = this.new Exit();
 	}
+
 	public void select(int key) {
 		if (key != 6) this.actions[--key].execute(this.input, this.tracker);
 	}
@@ -40,7 +42,10 @@ public class MenuTracker {
 		}
 	}
 	
-	private class AddItem implements UserAction {
+	private class AddItem extends BaseAction {
+		AddItem() {
+			super("AddItem");
+		};
 		public int key() {
 			return 1;
 		}
@@ -48,12 +53,12 @@ public class MenuTracker {
 			tracker.add(new Item(input.ask("Fill in 'name': "),
                                  input.ask("Fill in 'description': ")));
 		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Add the new item");
-		}
 	}
 
-	private class Edit implements UserAction {
+	private class Edit extends BaseAction {
+		Edit() {
+			super("Edit");
+		};
 		public int key() {
 			return 2;
 		}
@@ -62,55 +67,55 @@ public class MenuTracker {
 									input.ask("Enter new name: "),
 									input.ask("Enter new description: ")));
 		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Edit item");
-		}
 	}
 
-	private class Remove implements UserAction {
+	private class Remove extends BaseAction {
+		Remove() {
+		super("Remove");
+	};
 		public int key() {
 			return 3;
 		}
 		public void execute(Input input, Tracker tracker) {
 			tracker.remove(input.ask("Enter Id for remove: "));
 		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Remove item");
-		}
 	}
 
-	private class ShowItems implements UserAction {
+	private class ShowItems extends BaseAction {
+		ShowItems() {
+			super("Show all items");
+		};
 		public int key() {
 			return 4;
 		}
 		public void execute(Input input, Tracker tracker) {
 			tracker.show(tracker.getAll());
 		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Show all items");
-		}
+
 	}
 
-	private class Sort implements UserAction {
+	private class Sort extends BaseAction {
+		Sort() {
+			super("Sort of word");
+		};
 		public int key() {
 			return 5;
 		}
 		public void execute(Input input, Tracker tracker) {
 			tracker.show(tracker.sort(input.ask("Enter word for search: ")));
 		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Sort items of word");
-		}
 	}
 
-	private class Exit implements UserAction {
+	private class Exit extends BaseAction {
+
+		Exit() {
+			super("Exit");
+		};
+
 		public int key() {
 			return 6;
 		}
 		public void execute(Input input, Tracker tracker) {
-		}
-		public String info() {
-			return String.format("\t%s. %s", this.key(), "Exit");
 		}
 	}
 }
