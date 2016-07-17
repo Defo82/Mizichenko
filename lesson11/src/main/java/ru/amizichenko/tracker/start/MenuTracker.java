@@ -117,7 +117,7 @@ public class MenuTracker {
 			return 6;
 		}
 		public void execute(Input input, Tracker tracker) {
-			if("yes".equals(input.ask("Are you really want to exit? \nEnter yes/no: "))) {
+			if("yes".equals(input.ask("Are you really want to exit? \nEnter yes: "))) {
 			tracker.exit = false;
 			} else System.out.println("\nIncorrect input\n");
 		}
