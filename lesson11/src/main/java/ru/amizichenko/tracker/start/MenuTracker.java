@@ -3,10 +3,11 @@ import ru.amizichenko.tracker.models.*;
 import ru.amizichenko.tracker.templates.BaseAction;
 
 public class MenuTracker {
-	
+
 	private Input input;
 	private Tracker tracker;
 	private UserAction[] actions = new UserAction[6];
+
 
 	public int[] getRangeActions() {
 		int[] arr = new int[this.actions.length];
@@ -31,7 +32,7 @@ public class MenuTracker {
 	}
 
 	public void select(int key) {
-		if (key != 6) this.actions[--key].execute(this.input, this.tracker);
+		this.actions[--key].execute(this.input, this.tracker);
 	}
 
 	public void show() {
@@ -116,6 +117,9 @@ public class MenuTracker {
 			return 6;
 		}
 		public void execute(Input input, Tracker tracker) {
+			if("yes".equals(input.ask("Are you really want to exit? \nEnter yes/no: "))) {
+			tracker.exit = false;
+			} else System.out.println("\nIncorrect input\n");
 		}
 	}
 }
