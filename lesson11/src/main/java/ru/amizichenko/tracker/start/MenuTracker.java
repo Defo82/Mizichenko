@@ -7,6 +7,7 @@ public class MenuTracker {
 	private Input input;
 	private Tracker tracker;
 	private UserAction[] actions = new UserAction[6];
+	private int pasition;
 
 
 	public int[] getRangeActions() {
@@ -23,12 +24,15 @@ public class MenuTracker {
 	}
 	
 	public void fillActions() {
-		this.actions[0] = this.new AddItem();
-		this.actions[1] = this.new Edit();
-		this.actions[2] = this.new Remove();
-		this.actions[3] = this.new ShowItems();
-		this.actions[4] = this.new Sort();
-		this.actions[5] = this.new Exit();
+		this.actions[pasition++] = this.new AddItem();
+		this.actions[pasition++] = this.new Edit();
+		this.actions[pasition++] = this.new Remove();
+		this.actions[pasition++] = this.new ShowItems();
+		this.actions[pasition++] = this.new Sort();
+	}
+	
+	public void addAction(UserAction action) {
+		this.actions[pasition++] = action;
 	}
 
 	public void select(int key) {
@@ -107,19 +111,23 @@ public class MenuTracker {
 		}
 	}
 
-	private class Exit extends BaseAction {
+	public class Exit extends BaseAction {
+		StartUI start;
 
-		Exit() {
-			super("Exit");
-		};
+		public Exit(StartUI start) {
+			this.start = start;
+		}
 
 		public int key() {
 			return 6;
 		}
+
 		public void execute(Input input, Tracker tracker) {
-			if("yes".equals(input.ask("Are you really want to exit? \nEnter yes: "))) {
-			tracker.exit = false;
-			} else System.out.println("\nIncorrect input\n");
+			start.setExitTrue();
+		}
+
+		public String info() {
+			return String.format("\t%s. %s", this.key(), "Exit");
 		}
 	}
 }

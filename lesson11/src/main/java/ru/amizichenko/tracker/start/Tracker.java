@@ -4,7 +4,6 @@ import ru.amizichenko.tracker.models.*;
 public class Tracker {
 		private Item[] items = new Item[10];
 		private int position = 0;
-		boolean exit = true;
 		
 		//Добовление
 		public Item add(Item item) {

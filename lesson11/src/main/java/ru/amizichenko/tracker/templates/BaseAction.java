@@ -9,6 +9,9 @@ public abstract class BaseAction implements UserAction {
         this.name = name;
     }
 
+    public BaseAction() {
+    }
+
     public abstract int key();
 
     public abstract void execute(Input input, Tracker tracker);
