@@ -4,7 +4,6 @@
 
 */
 
-package lesson2;
 
 public class RefTask {
 public static void main(String[] args) {
