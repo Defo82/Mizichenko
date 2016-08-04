@@ -1,4 +1,4 @@
-package task;
+package ru.amizichenko.task;
 public class Main {
     public static void main(String[] args) {
 
