@@ -1,13 +1,13 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.amizichenko</groupId>
-	<artifactId>lesson3</artifactId>
+	<artifactId>lesson5</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>ru.amizichenko</groupId>
-		<artifactId>mizichenko</artifactId>
+		<groupId>ru.amizichenko.part1</groupId>
+		<artifactId>part1</artifactId>
 		<version>1.0</version>
 	</parent>
 

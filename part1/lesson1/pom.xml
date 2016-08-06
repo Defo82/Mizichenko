@@ -1,12 +1,13 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.amizichenko</groupId>
-	<artifactId>lesson8</artifactId>
+	<artifactId>lesson1</artifactId>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>ru.amizichenko</groupId>
-		<artifactId>mizichenko</artifactId>
+		<groupId>ru.amizichenko.part1</groupId>
+		<artifactId>part1</artifactId>
 		<version>1.0</version>
 	</parent>
 
@@ -14,7 +15,7 @@
 		<dependency>
     			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-    			<version>4.12</version>
+    			<version>4.11</version>
 		</dependency>
 	</dependencies>
 
@@ -33,9 +34,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <manifestEntries>
-                    <Main-Class>ru.amizichenko.tracker.start.StartUI</Main-Class>
-                  </manifestEntries>
+                  <mainClass>org.sonatype.haven.HavenCli</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -44,5 +43,6 @@
       </plugin>
     </plugins>
   </build>
+
 
 </project>
