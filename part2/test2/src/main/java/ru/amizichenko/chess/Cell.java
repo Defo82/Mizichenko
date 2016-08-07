@@ -1,7 +1,7 @@
 package ru.amizichenko.chess;
 
 /**
- * Created by Defo on 03.08.2016.
+ * Клетка
  */
 public class Cell {
 
@@ -18,15 +18,7 @@ public class Cell {
         return line;
     }
 
-    public void setLine(int line) {
-        this.line = line;
-    }
-
     public int getColumn() {
         return column;
-    }
-
-    public void setColumn(int column) {
-        this.column = column;
     }
 }
