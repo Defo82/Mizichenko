@@ -1,49 +1,20 @@
 package ru.amizichenko.chess;
 
 /**
- * Фигура
+ * Абстрактная Фигура
  */
-public class Figure{
-    /**
-     *
-     */
-    private boolean sideOfColor = true; //true white, false black
-    public Cell position;
-    private Cell distance;
+public abstract class Figure{
 
-
+    Figure() {}
     Figure(Cell position) {
         this.position = position;
     }
 
-    /**
-     * Метод возвращает путь для пешки
-     * @param distance клетка на которую нужно пойти
-     * @return массив клеток от текущего положения фигуры до distance
-     */
-    public Cell[] movePawn(Cell distance) {
-        this.distance = distance;
+    protected boolean sideOfColor = true; //true white, false black
+    public Cell position;
 
-        Cell[] way = new Cell[2];
-        int distLine = distance.getLine(); // для инкремента
 
-        if (sideOfColor) {
-            while(this.position.getLine() != distLine) {
-                for (int i = 0; i < way.length; i++) {
-                    way[i] = new Cell(distLine++, distance.getColumn());
-                }
-            }
-        } else {
-            while(this.position.getLine() != distLine) {
-                for (int i = 0; i < way.length; i++) {
-                    way[i] = new Cell(distLine--, distance.getColumn());
-                }
-            }
-        }
-
-        return way;
-
-    }
+    public abstract Cell[] move(Cell distance);
 
     /**
      * Метод перемещает фигуру
@@ -52,7 +23,7 @@ public class Figure{
      */
     public void figureGo(Cell distance, boolean allow) {
         if (allow) {
-            this.position = new Cell(distance.getLine(), distance.getColumn());
+            this.position = new Cell(distance.getLine(), distance.getLine());
         } else {
             System.out.println("Фигура не может туда пойти. ");
         }
