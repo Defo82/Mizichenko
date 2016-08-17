@@ -6,13 +6,13 @@ package ru.amizichenko.chess;
  */
 public class AllChessMen {
 
-    private class Pawn extends Figure {
+    public class Pawn extends Figure {
         /**
-         * Метод возвращает путь для пешки
+         * Метод возвращает путь от пешки до distance
          * @param distance клетка на которую нужно пойти
          * @return массив клеток от текущего положения фигуры до distance
          */
-        public Cell[] move(Cell distance) {
+        public Cell[] conditionClearWayTo(Cell distance) {
 
             Cell[] way = new Cell[2];
             int distLine = distance.getLine(); // для инкремента
@@ -34,22 +34,47 @@ public class AllChessMen {
             return way;
 
         }
+
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[4];
+            if (sideOfColor) {
+                if (this.position.getLine() == 6){
+                    way[0] = new Cell(this.position.getLine() - 1, this.position.getColumn());
+                    way[1] = new Cell(this.position.getLine() - 2, this.position.getColumn());
+                    if (this.position.getColumn() != 0) way[2] = new Cell(this.position.getLine() - 1, this.position.getColumn() - 1);
+                    if (this.position.getColumn() != 8) way[3] = new Cell(this.position.getLine() - 1, this.position.getColumn() + 1);
+                }
+            } else {
+                if (this.position.getLine() == 1){
+                    way[0] = new Cell(this.position.getLine() + 1, this.position.getColumn());
+                    way[1] = new Cell(this.position.getLine() + 2, this.position.getColumn());
+                    if (this.position.getColumn() != 0) way[2] = new Cell(this.position.getLine() + 1, this.position.getColumn() - 1);
+                    if (this.position.getColumn() != 8) way[3] = new Cell(this.position.getLine() + 1, this.position.getColumn() + 1);
+                }
+            }
+            return way;
+        }
+
     }
 
-    private class Knight extends Figure {
-        public Cell[] move(Cell distance) {
+    public class Knight extends Figure {
+        public Cell[] conditionClearWayTo(Cell distance) {
             Cell[] way = new Cell[7];
+            return way;
+        }
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[32];
             return way;
         }
     }
 
-    private class Bishop extends Figure {
+    public class Bishop extends Figure {
         /**
          * Метод возвращает путь для слона
          * @param distance клетка на которую нужно пойти
          * @return массив клеток от текущего положения фигуры до distance
          */
-        public Cell[] move(Cell distance) {
+        public Cell[] conditionClearWayTo(Cell distance) {
             Cell[] way = new Cell[7];
             int distLine = distance.getLine();
             int distColumn = distance.getColumn();
@@ -85,15 +110,19 @@ public class AllChessMen {
             }
             return way;
         }
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[32];
+            return way;
+        }
     }
 
-    private class Rook extends Figure {
+    public class Rook extends Figure {
         /**
          * Метод возвращает путь для ладьи
          * @param distance клетка на которую нужно пойти
          * @return массив клеток от текущего положения фигуры до distance
          */
-        public Cell[] move(Cell distance) {
+        public Cell[] conditionClearWayTo(Cell distance) {
             Cell[] way = new Cell[7];
             int distLine = distance.getLine();
             int distColumn = distance.getColumn();
@@ -131,15 +160,19 @@ public class AllChessMen {
             }
             return way;
         }
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[32];
+            return way;
+        }
     }
 
-    private class Queen extends Figure {
+    public class Queen extends Figure {
         /**
          * Метод возвращает путь для ферзя
          * @param distance клетка на которую нужно пойти
          * @return массив клеток от текущего положения фигуры до distance
          */
-        public Cell[] move(Cell distance) {
+        public Cell[] conditionClearWayTo(Cell distance) {
             Cell[] way = new Cell[7];
             int distLine = distance.getLine();
             int distColumn = distance.getColumn();
@@ -208,20 +241,28 @@ public class AllChessMen {
 
             return way;
         }
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[32];
+            return way;
+        }
     }
 
-    private class King extends Figure {
+    public class King extends Figure {
         /**
          * Метод возвращает путь для короля
          * @param distance клетка на которую нужно пойти
          * @return массив клеток от текущего положения фигуры до distance
          */
-        public Cell[] move(Cell distance) {
+        public Cell[] conditionClearWayTo(Cell distance) {
             Cell[] way = new Cell[1];
             if ((distance.getLine() <= this.position.getLine()-1 && distance.getLine() >= this.position.getLine()+1) &&
                     (distance.getColumn() <= this.position.getColumn()-1 && distance.getColumn() >= this.position.getColumn()+1)) {
                         way[0] = new Cell(distance.getLine(), distance.getColumn());
             }
+            return way;
+        }
+        public Cell[] conditionCorrectFiguresWay(Cell distance) {
+            Cell[] way = new Cell[32];
             return way;
         }
     }
