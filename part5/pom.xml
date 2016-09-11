@@ -1,14 +1,18 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ru.amizichenko</groupId>
-	<artifactId>mizichenko</artifactId>
+	<groupId>ru.amizichenko.part2</groupId>
+	<artifactId>part5</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>ru.amizichenko</groupId>
+		<artifactId>mizichenko</artifactId>
+		<version>1.0</version>
+	</parent>
+
 	<modules>
-		<module>part1</module>
-		<module>part2</module>
-		<module>part5</module>
+		<module>lesson11</module>
 	</modules>
 
 	<dependencies>
