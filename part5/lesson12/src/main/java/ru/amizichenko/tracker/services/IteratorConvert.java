@@ -10,6 +10,12 @@ public class IteratorConvert<Integer> implements Iterator {
     private int[] allResult = new int[100];
     private int index;
 
+    /**
+     * Метод convert призван из массива итераторов сделать массив чисел.
+     * @param it это объект итератора который содержит массив итераторов.
+     * @return возвращает объект который содержит числовой массив хранящий результаты итераторов объекта it.
+     * Фактически вернется объект текущего класса. Он и будет содержать числовой массив.
+     */
     public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
         int i = 0;
         while (it.hasNext()) {
