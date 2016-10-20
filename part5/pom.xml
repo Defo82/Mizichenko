@@ -1,6 +1,6 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ru.amizichenko.part2</groupId>
+	<groupId>ru.amizichenko</groupId>
 	<artifactId>part5</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -12,7 +12,7 @@
 	</parent>
 
 	<modules>
-		<module>lesson11</module>
+		<module>lesson12</module>
 	</modules>
 
 	<dependencies>

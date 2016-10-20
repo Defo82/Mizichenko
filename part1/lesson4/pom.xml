@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 
 	<parent>
-		<groupId>ru.amizichenko.part1</groupId>
+		<groupId>ru.amizichenko</groupId>
 		<artifactId>part1</artifactId>
 		<version>1.0</version>
 	</parent>
