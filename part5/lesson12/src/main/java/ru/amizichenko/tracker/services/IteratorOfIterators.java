@@ -15,16 +15,13 @@ public IteratorOfIterators(Iterator[] value) {
 }
 
     public boolean hasNext() {
-        boolean resoult = false;
-        for (int i = this.index; i < it.length; i++) {
-            if (it[i] != null) resoult = true;
-            break;
-        }
-        return resoult;
+        boolean result = false;
+            if (this.index + 1 <= this.it.length) result = true;
+        return result;
     }
 
     public Iterator next() {
 
-        return this.it[index++];
+        return this.it[this.index++];
     }
 }

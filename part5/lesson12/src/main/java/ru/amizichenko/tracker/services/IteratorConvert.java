@@ -5,26 +5,30 @@ import java.util.Iterator;
 /**
  * Created by Defo on 05.10.2016.
  */
-public class IteratorConvert implements Iterator {
+public class IteratorConvert<Integer> implements Iterator {
 
-    Iterator<Iterator<Integer>> it;
-    Iterator<Integer> position;
+    private int[] allResult;
+    private int index;
 
     public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
-        this.it = it;
+        int i = 0;
+        while (it.hasNext()) {
+            Iterator objIt = it.next();
+            while (objIt.hasNext()) {
+                this.allResult[i++] = (int) objIt.next();
+            }
+        }
         return this;
     }
 
     public boolean hasNext() {
-        return it.hasNext() || (position != null && position.hasNext());
+        boolean result = false;
+        if (this.index + 1 <= this.allResult.length) result = true;
+        return result;
     }
 
-    public Integer next() {
-        if(position == null) {
-            position = it.next();
-        }else if (!position.hasNext()) {
-            position = it.next();
-        }
-        return position.next();
+    public Object next() {
+
+        return this.allResult[this.index++];
     }
 }
