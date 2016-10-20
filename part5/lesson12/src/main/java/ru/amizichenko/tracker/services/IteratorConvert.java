@@ -7,7 +7,7 @@ import java.util.Iterator;
  */
 public class IteratorConvert<Integer> implements Iterator {
 
-    private int[] allResult;
+    private int[] allResult = new int[100];
     private int index;
 
     public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
