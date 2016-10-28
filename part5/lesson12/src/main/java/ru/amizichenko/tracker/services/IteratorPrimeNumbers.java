@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * Created by Defo on 14.09.2016.
  */
-public class IteratorPrimeNumbers implements Iterator {
+public class IteratorPrimeNumbers implements Iterator<Integer> {
 
     private final int[] values;
     private int index = 0;
@@ -26,7 +26,7 @@ public class IteratorPrimeNumbers implements Iterator {
         return check;
     }
 
-    public Object next() {
+    public Integer next() {
         int primeNumber = 0;
         for (int i = this.index; i < this.values.length; i++) {
             if (isPrime(values[i])) {

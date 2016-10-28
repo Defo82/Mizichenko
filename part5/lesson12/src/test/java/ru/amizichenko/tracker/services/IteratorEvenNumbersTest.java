@@ -14,7 +14,7 @@ public class IteratorEvenNumbersTest {
     public void whenGetNextCallShouldReturnEvenNumberAndPointerForward() {
         IteratorEvenNumbers it = new IteratorEvenNumbers(new int[] {1,1,1,2,1,1,4});
         it.next();
-        int resoult = (Integer) it.next();
+        int resoult = it.next();
 
         assertThat(resoult, is(4));
     }

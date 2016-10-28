@@ -13,10 +13,11 @@ public class IteratorPrimeNumbersTest {
     @Test
     public void whenGetNextCallShouldReturnPrimeNumberAndPointerForward() {
         IteratorPrimeNumbers it = new IteratorPrimeNumbers(new int[] {1,1,1,2,1,1,3});
-        it.next();
-        int resoult = (Integer) it.next();
 
-        assertThat(resoult, is(3));
+        it.next();
+        int result =  it.next();
+
+        assertThat(result, is(3));
     }
 
     @Test

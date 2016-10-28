@@ -12,14 +12,21 @@ import static org.hamcrest.core.Is.is;
 public class IteratorConvertTest {
 
     @Test
-    public void whenConvertGetIteratorOfIteratorsThanReturnIteratorOfInteger() {
-        IteratorEvenNumbers ien = new IteratorEvenNumbers(new int[] {1,1,1,2,1,1,4});
-        IteratorOfIterators ioi = new IteratorOfIterators(new Iterator[]{ien});
-        IteratorConvert ic = new IteratorConvert<Integer>();
+    public void whenConvertGetArrayOfIteratorsReturnsDigitsFromAll() {
+        Iterator<Integer> ien = new IteratorEvenNumbers(new int[] {1,1,1,2,1,1,4});
+        Iterator<Integer> ipn = new IteratorPrimeNumbers(new int[] {1,1,1,2,1,1,3});
+        Iterator<Iterator<Integer>> ioi = new IteratorOfIterators(new Iterator[] {ien, ipn});
+        IteratorConvert ic = new IteratorConvert();
 
-        Iterator<Integer> result = ic.convert(ioi);
+        int firstValue = ic.convert(ioi);
+        int secondValue = ic.convert(ioi);
+        int thirdValue = ic.convert(ioi);
+        int fourthValue = ic.convert(ioi);
 
-        assertThat(result.next(), is(2));
+        assertThat(firstValue, is(2));
+        assertThat(secondValue, is(4));
+        assertThat(thirdValue, is(2));
+        assertThat(fourthValue, is(3));
     }
 
 }

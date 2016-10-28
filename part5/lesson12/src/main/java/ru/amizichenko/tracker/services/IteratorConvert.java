@@ -5,36 +5,25 @@ import java.util.Iterator;
 /**
  * Created by Defo on 05.10.2016.
  */
-public class IteratorConvert<Integer> implements Iterator {
+public class IteratorConvert implements Iterator {
 
-    private int[] allResult = new int[100];
-    private int index;
+    private Iterator<Integer> currentIterator;
 
     /**
-     * Метод convert призван из массива итераторов сделать массив чисел.
-     * @param it это объект итератора который содержит массив итераторов.
-     * @return возвращает объект который содержит числовой массив хранящий результаты итераторов объекта it.
-     * Фактически вернется объект текущего класса. Он и будет содержать числовой массив.
+     * Метод convert ничего не конвертирует. Он работает как глобальный "next" сразу для нескольких итераторов.
+     * @param it это объект содержащий массив итераторов.
+     * @return при каждом вызове возвращает число.
      */
-    public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
-        int i = 0;
-        while (it.hasNext()) {
-            Iterator objIt = it.next();
-            while (objIt.hasNext()) {
-                this.allResult[i++] = (int) objIt.next();
-            }
-        }
-        return this;
+    public int convert(Iterator<Iterator<Integer>> it) {
+        if (currentIterator == null || !currentIterator.hasNext()) this.currentIterator = it.next();
+        return this.currentIterator.next();
     }
 
     public boolean hasNext() {
-        boolean result = false;
-        if (this.index + 1 <= this.allResult.length) result = true;
-        return result;
+        return false;
     }
 
-    public Object next() {
-
-        return this.allResult[this.index++];
+    public Iterator<Integer> next() {
+        return null;
     }
 }

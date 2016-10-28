@@ -5,14 +5,14 @@ import java.util.Iterator;
 /**
  * Created by Defo on 18.10.2016.
  */
-public class IteratorOfIterators implements Iterator {
+public class IteratorOfIterators implements Iterator<Iterator<Integer>> {
 
-    private Iterator[] it;
-    private int index;
+    private Iterator<Integer>[] it;
+    private int index = 0;
 
-public IteratorOfIterators(Iterator[] value) {
-    this.it = value;
-}
+    public IteratorOfIterators(Iterator[] value) {
+        this.it = value;
+    }
 
     public boolean hasNext() {
         boolean result = false;
@@ -20,8 +20,9 @@ public IteratorOfIterators(Iterator[] value) {
         return result;
     }
 
-    public Iterator next() {
-
-        return this.it[this.index++];
+    public Iterator<Integer> next() {
+        Iterator<Integer> next = this.it[this.index];
+        this.index++;
+        return next;
     }
 }
