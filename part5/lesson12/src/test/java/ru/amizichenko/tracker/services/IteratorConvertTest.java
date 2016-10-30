@@ -2,7 +2,7 @@ package ru.amizichenko.tracker.services;
 
 import org.junit.Test;
 
-import java.util.Iterator;
+import java.util.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -12,21 +12,15 @@ import static org.hamcrest.core.Is.is;
 public class IteratorConvertTest {
 
     @Test
-    public void whenConvertGetArrayOfIteratorsReturnsDigitsFromAll() {
-        Iterator<Integer> ien = new IteratorEvenNumbers(new int[] {1,1,1,2,1,1,4});
-        Iterator<Integer> ipn = new IteratorPrimeNumbers(new int[] {1,1,1,2,1,1,3});
-        Iterator<Iterator<Integer>> ioi = new IteratorOfIterators(new Iterator[] {ien, ipn});
-        IteratorConvert ic = new IteratorConvert();
+    public void whenItHasOneThenReturnTwo() {
+        Iterator<Integer> first = Arrays.asList(1).iterator();
+        Iterator<Integer> second = Arrays.asList(2).iterator();
+        Iterator<Iterator<Integer>> it = Arrays.asList(first, second).iterator();
+        Iterator<Integer> result = new IteratorConvert().convert(it);
 
-        int firstValue = ic.convert(ioi).next();
-        int secondValue = ic.convert(ioi).next();
-        int thirdValue = ic.convert(ioi).next();
-        int fourthValue = ic.convert(ioi).next();
-
-        assertThat(firstValue, is(2));
-        assertThat(secondValue, is(4));
-        assertThat(thirdValue, is(2));
-        assertThat(fourthValue, is(3));
+        result.next(); // 1
+        int value = result.next();
+        assertThat(value, is(2));
     }
 
 }
