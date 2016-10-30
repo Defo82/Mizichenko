@@ -18,10 +18,10 @@ public class IteratorConvertTest {
         Iterator<Iterator<Integer>> ioi = new IteratorOfIterators(new Iterator[] {ien, ipn});
         IteratorConvert ic = new IteratorConvert();
 
-        int firstValue = ic.convert(ioi);
-        int secondValue = ic.convert(ioi);
-        int thirdValue = ic.convert(ioi);
-        int fourthValue = ic.convert(ioi);
+        int firstValue = ic.convert(ioi).next();
+        int secondValue = ic.convert(ioi).next();
+        int thirdValue = ic.convert(ioi).next();
+        int fourthValue = ic.convert(ioi).next();
 
         assertThat(firstValue, is(2));
         assertThat(secondValue, is(4));

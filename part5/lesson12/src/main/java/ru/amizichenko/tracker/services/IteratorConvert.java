@@ -10,20 +10,21 @@ public class IteratorConvert implements Iterator {
     private Iterator<Integer> currentIterator;
 
     /**
-     * Метод convert ничего не конвертирует. Он работает как глобальный "next" сразу для нескольких итераторов.
      * @param it это объект содержащий массив итераторов.
-     * @return при каждом вызове возвращает число.
+     * @return при каждом вызове возвращает один из итераторов того массива.
      */
-    public int convert(Iterator<Iterator<Integer>> it) {
+    public Iterator<Integer> convert(Iterator<Iterator<Integer>> it) {
         if (currentIterator == null || !currentIterator.hasNext()) this.currentIterator = it.next();
-        return this.currentIterator.next();
+        return this.currentIterator;
     }
 
     public boolean hasNext() {
-        return false;
+
+        return this.currentIterator.hasNext();
     }
 
-    public Iterator<Integer> next() {
-        return null;
+    public Integer next() {
+
+        return this.currentIterator.next();
     }
 }
