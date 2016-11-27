@@ -21,12 +21,6 @@ public class SimpleArray<T> {
     }
 
     public void delete(int index) {
-        /*if (index >= 0 && index < objects.length) {
-            Object[] copy = new Object[objects.length-1];
-            System.arraycopy(objects, 0, copy, 0, index);
-            System.arraycopy(objects, index+1, copy, index, objects.length-index-1);
-            this.objects = copy;
-        }*/
         this.objects[index] = null;
     }
 
