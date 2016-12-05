@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
  */
 public class RoleStoreTest {
 
-    RoleStore rs = new RoleStore(new SimpleArray<Base>(2));
+    RoleStore rs = new RoleStore(new SimpleArray<Base>(1));
 
     @Test
     public void add() throws Exception {
@@ -20,7 +20,7 @@ public class RoleStoreTest {
         role.setId("1");
         rs.add(role);
 
-        String result = rs.get(0).getId();
+        String result = rs.get("1").getId();
 
         assertThat(result, is("1"));
 
@@ -28,30 +28,38 @@ public class RoleStoreTest {
     }
 
     @Test
-    public void update() throws Exception {
+    public void update() {
         Role role = new Role();
-        role.setId("2");
-        rs.update(0, role);
+        rs.add(role);
+        role.setId("1");
+        rs.update(role);
 
-        String result = rs.get(0).getId();
+        String result = rs.get("1").getId();
 
-        assertThat(result, is("2"));
+        assertThat(result, is("1"));
 
     }
 
     @Test
     public void delete() throws Exception {
-        rs.delete(0);
+        Role role = new Role();
+        role.setId("1");
+        rs.add(role);
+
+        rs.delete("1");
+
         Assert.assertNull(rs.get(0));
+
 
     }
 
     @Test
     public void get() throws Exception {
         Role role = new Role();
+        role.setId("1");
         rs.add(role);
 
-        Base result = rs.get(0);
+        Base result = rs.get("1");
 
         assertThat(result, is(role));
     }

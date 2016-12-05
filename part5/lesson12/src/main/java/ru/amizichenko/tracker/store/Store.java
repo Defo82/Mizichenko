@@ -9,7 +9,7 @@ public interface Store<T extends Base> {
      * Эти методы будут использоваться вместо методов SimpleArray.
      */
     void add(T value);
-    void update(int id, T value);
-    void delete(int id);
-    T get(int id);
+    void update(T value);
+    void delete(String id);
+    T get(String id);
 }

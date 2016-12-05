@@ -28,4 +28,8 @@ public class SimpleArray<T> {
         return (T) this.objects[index];
     }
 
+    public int getSize() {
+        return this.objects.length;
+    }
+
 }

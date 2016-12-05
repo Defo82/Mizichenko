@@ -20,17 +20,63 @@ public class RoleStore implements Store{
     }
 
     @Override
-    public void update(int id, Base value) {
-        this.simpleArray.update(id, value);
+    public void update(Base value) {
+        this.simpleArray.update(findIndexById(value), value);
     }
 
     @Override
-    public void delete(int id) {
-        this.simpleArray.delete(id);
+    public void delete(String id) {
+        this.simpleArray.delete(findIndexById(id));
+    }
+
+    /**
+     * Метод для теста delete()
+     * Возвращает объект по индексу
+     * @param index
+     * @return
+     */
+    public Base get(int index) {
+        return this.simpleArray.get(index);
     }
 
     @Override
-    public Base get(int id) {
-        return this.simpleArray.get(id);
+    public Base get(String id) {
+        return this.simpleArray.get(findIndexById(id));
     }
+
+    /**
+     * Пробегает по массиву в simpleArray.
+     * @param id
+     * @return index
+     */
+    private int findIndexById(String id) {
+        int index = 0;
+        for (int i = index; i < this.simpleArray.getSize(); i++) {
+            if(this.simpleArray.get(i).getId().equals(id)) {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
+    /**
+     *
+     * @param value
+     * @return index
+     */
+    private int findIndexById(Base value) {
+        int index = 0;
+        for (int i = index; i < this.simpleArray.getSize(); i++) {
+           if(this.simpleArray.get(i).getId().equals(value.getId())) {
+               index = i;
+               break;
+           }
+
+        }
+
+        return index;
+    }
+
 }
