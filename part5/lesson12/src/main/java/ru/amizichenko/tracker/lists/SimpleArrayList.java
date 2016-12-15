@@ -20,7 +20,7 @@ public class SimpleArrayList<T> {
 
     public boolean add(T value) {
         if (!hasNext(simpleArray)) {
-            this.simpleArray = Arrays.copyOf(simpleArray, standardSize++);
+            this.simpleArray = Arrays.copyOf(simpleArray, standardSize*2);
         }
         this.simpleArray[index++] = value;
         return true;
